@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+// import Jsx from './comps/jsxComp/Jsx';
 import reportWebVitals from './reportWebVitals';
+// import ClassComp from './comps/classComp';
+import FunctionComp from './comps/functionComp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div>
+      {/* <App /> */}
+      {/* <Jsx /> */}
+      {/* <ClassComp/> */}
+      <FunctionComp/>
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
