@@ -5,7 +5,10 @@ import './index.css';
 // import Jsx from './comps/jsxComp/Jsx';
 import reportWebVitals from './reportWebVitals';
 // import ClassComp from './comps/classComp';
-import FunctionComp from './comps/functionComp';
+// import FunctionComp from './comps/functionComp';
+// import SetState from './comps/setState';
+import HomePage from './comps/combinedComp/homePage';
+import UserPage from './comps/combinedComp/userPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,7 +16,10 @@ ReactDOM.render(
       {/* <App /> */}
       {/* <Jsx /> */}
       {/* <ClassComp/> */}
-      <FunctionComp/>
+      {/* <FunctionComp/> */}
+      {/* <SetState /> */}
+      {/* <HomePage /> */}
+      <UserPage />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
