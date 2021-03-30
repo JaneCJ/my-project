@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
@@ -12,7 +12,10 @@ import reportWebVitals from './reportWebVitals';
 // import UserPage from './comps/combinedComp/userPage';
 // import ReduxPage from './comps/reduxPage';
 import store from './store';
-import ReactReduxPage from './comps/reactReduxPage';
+// import ReactReduxPage from './comps/reactReduxPage';
+// import ReactRoutePage from './comps/reactRoutePage';
+// import PureComponentPage from './comps/pureComponentPage';
+import LifeCyclePage from './comps/lifeCyclePage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,7 +29,10 @@ ReactDOM.render(
         {/* <HomePage /> */}
         {/* <UserPage /> */}
         {/* <ReduxPage /> */}
-        <ReactReduxPage />
+        {/* <ReactReduxPage /> */}
+        {/* <ReactRoutePage /> */}
+        {/* <PureComponentPage /> */}
+        <LifeCyclePage/>
       </div>
     </Provider>
   </React.StrictMode>,
