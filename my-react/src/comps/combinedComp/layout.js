@@ -12,6 +12,7 @@ export default class Layout extends Component {
         return (
             <div>
                 {showTopBar && <TopBar />}
+                {/* {children} */}
                 {children.content}
                 {children.txt}
                 <button onClick={children.btnClick}>Btn</button>
