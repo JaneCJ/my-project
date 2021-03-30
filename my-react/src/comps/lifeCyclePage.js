@@ -8,8 +8,14 @@ export default class LifeCyclePage extends Component {
         }
         console.log('constructor');
     }
-    componentWillMount() {
-        console.log('componentWillMount');
+    // UNSAFE_componentWillMount() {
+    //     console.log('componentWillMount');
+    // }
+    // render前执行getDerivedStateFromProps
+    static getDerivedStateFromProps(props, state) {
+        console.log('getDerivedStateFromProps');
+        const { count } = state;
+        return count > 5 ? { count: 0 } : count;
     }
     componentDidMount() {
         console.log('componentDidMount');
@@ -18,11 +24,17 @@ export default class LifeCyclePage extends Component {
         console.log('shouldComponentUpdate');
         return nextState.count !== 3;
     }
-    componentWillUpdate() {
-        console.log('componentWillUpdate');
+    getSnapshotBeforeUpdate(preProps,preState){
+        console.log('getSnapshotBeforeUpdate');
+        return {
+            msg:'wo shi getSnapshotBeforeUpdate'
+        };
     }
-    componentDidUpdate() {
-        console.log('componentDidUpdate');
+    // UNSAFE_componentWillUpdate() {
+    //     console.log('componentWillUpdate');
+    // }
+    componentDidUpdate(preProps,preState,snapshot) {
+        console.log('componentDidUpdate',preProps,preState,snapshot);
     }
     setCount = () => {
         this.setState({
@@ -37,16 +49,16 @@ export default class LifeCyclePage extends Component {
                 <h3>LifeCyclePage</h3>
                 <p>{count}</p>
                 <button onClick={this.setCount}>改变count</button>
-                {count < 5 && <Child count={count} />}
+                {/* {count < 5 && <Child count={count} />} */}
             </div>
         )
     }
 }
 class Child extends Component {
     // 初次渲染不执行，仅父组件props改变时执行
-    componentWillReceiveProps(props, state) {
-        console.log('componentWillReceiveProps');
-    }
+    // UNSAFE_componentWillReceiveProps(props, state) {
+    //     console.log('componentWillReceiveProps');
+    // }
     componentWillUnmount() {
         console.log('componentWillUnmount');
     }
